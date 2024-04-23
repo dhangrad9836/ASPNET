@@ -1,12 +1,12 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-
-@model IEnumerable<Product>
+﻿@model IEnumerable<Product>
 
 <h2>Products</h2>
+
+@*creates a link to Create a New Product*@
+<div style="display: block">
+    <a href="/Product/InsertProduct/">Create a New Product</a>
+</div>
+
 <table class="table">
     <tr>
         <th>ID</th>

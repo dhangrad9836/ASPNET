@@ -13,6 +13,10 @@ namespace Testing
 
         //this is void b/c it's doing an action by updating the product and we pass in the product that we want to update
         public void UpdateProduct(Product product);
+
+        public void InsertProduct(Product productToInsert);
+        public IEnumerable<Category> GetCategories();
+        public Product AssignCategory();
     }
 
 
