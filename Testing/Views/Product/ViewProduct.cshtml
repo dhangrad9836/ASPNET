@@ -1,0 +1,21 @@
+﻿@model Product
+
+@*this is for a single product not a list*@
+<h3>@Model.Name Information</h3>
+
+<table class="table">
+    <tr>
+        <th>Product ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category ID</th>
+        <th>StockLevel</th>
+    </tr>
+    <tr>
+        <th>@Model.ProductID</th>
+        <th>@Model.Name</th>
+        <th>@Model.Price</th>
+        <th>@Model.CategoryID</th>
+        <th>@Model.StockLevel</th>
+    </tr>
+</table>
