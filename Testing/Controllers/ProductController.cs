@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Testing.Models;
 
 namespace Testing.Controllers
 {
@@ -16,12 +17,34 @@ namespace Testing.Controllers
         {
             var products = repo.GetAllProducts();
             return View(products);
-        }
+        } //end index()
 
+        //View the products
         public IActionResult ViewProduct(int id)
         {
             var product = repo.GetProduct(id);
             return View(product);
-        }
+        } // end ViewProduct()
+
+        //Updating the products
+        public IActionResult UpdateProduct(int id)
+        {
+            Product prod = repo.GetProduct(id);
+
+            if (prod == null)
+            {
+                return View("ProductNotFound");
+            }
+            return View(prod);
+        } // end UpdateProduct()
+
+        //this updates the database after the  updateProduct is ran then the ViewProduct method will run again to display the View
+        public IActionResult UpdateProductToDatabase(Product product)
+        {
+            repo.UpdateProduct(product);
+
+            return RedirectToAction("ViewProduct", new { id = product.ProductID });
+        } // end UpdateProductToDatabase()
+
     }
 }

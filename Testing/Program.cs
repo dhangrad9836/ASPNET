@@ -11,6 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+//connection to the bestbuy database
 builder.Services.AddScoped<IDbConnection>((s) =>
 {
     IDbConnection conn = new MySqlConnection(builder.Configuration.GetConnectionString("bestbuy"));
