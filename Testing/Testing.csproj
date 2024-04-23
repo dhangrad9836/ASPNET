@@ -9,6 +9,10 @@
     <PackageReference Include="MySql.Data" Version="8.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="bin\Debug\net6.0\" />
+  </ItemGroup>
+
 
 
 </Project>
