@@ -51,5 +51,16 @@ namespace Testing
 
             return product;
         }
+
+        //this method deletes the product info from the Reviews, Sales, and finally Products so we don't have any info about the product in any other table
+        public void DeleteProduct(Product product)
+        {
+            _conn.Execute("DELETE FROM REVIEWS WHERE ProductID = @id;",
+                new { id = product.ProductID });
+            _conn.Execute("DELETE FROM SALES WHERE ProductId = @id;",
+                new { id = product.ProductID });
+            _conn.Execute("DELETE FROM PRODUCTS WHERE ProductId = @id;",
+                new { id = product.ProductID });
+        }
     }
 }
